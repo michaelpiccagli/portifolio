@@ -1,9 +1,41 @@
 const buttonTop = document.getElementById('backToTopButton')
 const menuMobile = document.querySelector('#menu-hamburguer')
 
+document.addEventListener("DOMContentLoaded", function () {
+    function typeWriter(element, text, delay = 100, callback) {
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, delay);
+        } else if (callback) {
+          setTimeout(callback, 300);
+        }
+      }
+      typing();
+    }
+  
+    const p = document.querySelector(".texto-home p");
+    const h1 = document.querySelector(".texto-home h1");
+    const span = document.querySelector(".texto-home span");
+    const h2 = document.querySelector(".texto-home h2");
+  
+    p.innerHTML = "";
+    h1.innerHTML = "";
+    span.innerHTML = "";
+    h2.innerHTML = "";
+  
+    typeWriter(p, "Olá ✌️,", 100, function () {
+      typeWriter(h1, "meu nome é", 100, function () {
+        typeWriter(span, "Michael Piccagli", 100, function () {
+          typeWriter(h2, "Desenvolvedor Front-End", 100);
+        });
+      });
+    });
+  });
+
 window.sr = ScrollReveal({ reset: true });
-
-
 window.addEventListener('scroll', () => {
     buttonTop.classList.add('show')
     if (scrollY < 350) {
@@ -71,3 +103,5 @@ sr.reveal('.cards-wrapper', {
     duration: 2000
 });
 
+
+  
