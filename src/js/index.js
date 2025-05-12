@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     h2.innerHTML = "";
   
     typeWriter(p, "Olá ✌️,", 100, function () {
-      typeWriter(h1, "meu nome é", 100, function () {
+      typeWriter(h1, "Meu nome é", 100, function () {
         typeWriter(span, "Michael Piccagli", 100, function () {
           typeWriter(h2, "Desenvolvedor Front-End", 100);
         });
